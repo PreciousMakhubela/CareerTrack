@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerTrack | Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">Career<span>Track</span></div>
+    <nav>
+      <a class="active" href="dashboard.html">Dashboard</a>
+      <a href="#passport">Skills Passport</a>
+      <a href="#opportunities">Opportunities</a>
+      <a href="#applications">My Applications</a>
+      <a href="#projects">Projects</a>
+    </nav>
+    <p class="side-note">Your career journey, organised.</p>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <div><p class="eyebrow">CAREER WORKSPACE</p><h1>Dashboard</h1></div>
+      <div class="avatar" aria-label="User profile">PM</div>
+    </header>
+    <section class="welcome">
+      <div><p class="eyebrow light">YOUR NEXT CHAPTER STARTS HERE</p><h2>Welcome back!</h2>
+      <p>Build your profile, track applications, and discover opportunities that fit your skills.</p>
+      <a class="button button-light" href="#passport">Complete your Skills Passport</a></div>
+      <div class="welcome-mark">CT</div>
+    </section>
+    <section class="stats">
+      <article class="stat-card"><span class="stat-icon">◎</span><p>Profile completion</p><strong>45%</strong><div class="progress"><span style="width:45%"></span></div></article>
+      <article class="stat-card"><span class="stat-icon">↗</span><p>Applications tracked</p><strong id="application-count">3</strong><small>Keep your progress updated</small></article>
+      <article class="stat-card"><span class="stat-icon">✦</span><p>Skills listed</p><strong>6</strong><small>Add skills to improve matches</small></article>
+    </section>
+    <section class="section" id="passport">
+      <div class="section-heading"><div><p class="eyebrow">YOUR PROFILE</p><h2>Skills Passport</h2></div><button class="button button-primary" id="edit-profile">+ Add details</button></div>
+      <p class="muted">Bring your skills, qualifications and projects together in one place.</p>
+      <div class="passport-grid">
+        <article class="panel"><div class="panel-heading"><h3>Technical skills</h3><span>06</span></div><div class="chips"><span>JavaScript</span><span>Node.js</span><span>MySQL</span><span>HTML &amp; CSS</span><span>Java</span><span>React</span></div><button class="text-button" id="edit-skills">Edit skills →</button></article>
+        <article class="panel"><div class="panel-heading"><h3>Education</h3><span>01</span></div><h4>Computer Science</h4><p class="muted">Tshwane University of Technology</p><span class="tag">Graduate</span><button class="text-button" id="edit-education">Edit education →</button></article>
+        <article class="panel" id="projects"><div class="panel-heading"><h3>Projects</h3><span>02</span></div><h4>CareerTrack</h4><p class="muted">Personal career development project</p><h4>EduSecure</h4><p class="muted">School and family communication platform</p><button class="text-button" id="add-project">+ Add project</button></article>
+      </div>
+    </section>
+    <section class="section" id="opportunities">
+      <div class="section-heading"><div><p class="eyebrow">DISCOVER WHAT'S NEXT</p><h2>Opportunity explorer</h2></div><span class="sample-label">SAMPLE DATA</span></div>
+      <div class="search-row"><input id="search" type="search" placeholder="Search opportunities..." aria-label="Search opportunities"><select id="type-filter" aria-label="Filter opportunity type"><option value="all">All types</option><option value="graduate">Graduate programme</option><option value="internship">Internship</option><option value="learnership">Learnership</option></select></div>
+      <div class="opportunity-list" id="opportunity-list">
+        <article class="opportunity" data-type="graduate"><div class="opportunity-icon">G</div><div class="opportunity-content"><span class="tag">Graduate programme</span><h3>Graduate Software Developer</h3><p class="muted">Example Technology Company · Johannesburg / Hybrid</p><p>Entry-level opportunity for candidates interested in software development.</p></div><div class="opportunity-action"><span class="match">Skills match: sample</span><button class="button button-outline save-button">Save</button></div></article>
+        <article class="opportunity" data-type="internship"><div class="opportunity-icon">I</div><div class="opportunity-content"><span class="tag">Internship</span><h3>Junior Data &amp; BI Intern</h3><p class="muted">Example Analytics Team · Gauteng</p><p>Learn reporting, SQL, data preparation and business intelligence tools.</p></div><div class="opportunity-action"><span class="match">Skills match: sample</span><button class="button button-outline save-button">Save</button></div></article>
+        <article class="opportunity" data-type="learnership"><div class="opportunity-icon">L</div><div class="opportunity-content"><span class="tag">Learnership</span><h3>Software Testing Learner</h3><p class="muted">Example Digital Services · South Africa</p><p>Build experience in software quality assurance and testing fundamentals.</p></div><div class="opportunity-action"><span class="match">Skills match: sample</span><button class="button button-outline save-button">Save</button></div></article>
+      </div>
+      <p class="disclaimer">These are illustrative examples, not live vacancies. Verify any real opportunity before applying.</p>
+    </section>
+    <section class="section" id="applications">
+      <div class="section-heading"><div><p class="eyebrow">STAY ORGANISED</p><h2>Recent applications</h2></div><button class="button button-outline" id="add-application">+ Track application</button></div>
+      <div class="panel table-panel"><div class="application-row application-header"><span>Role</span><span>Company</span><span>Status</span></div>
+        <div class="application-row"><strong>Graduate Developer</strong><span>Example Company A</span><span class="status status-review">In progress</span></div>
+        <div class="application-row"><strong>IT Graduate Programme</strong><span>Example Company B</span><span class="status status-sent">Submitted</span></div>
+        <div class="application-row"><strong>QA Intern</strong><span>Example Company C</span><span class="status status-draft">Preparing</span></div>
+      </div>
+    </section>
+    <footer>CareerTrack · Prototype dashboard · Your information is not yet connected to a database.</footer>
+  </main>
+  <dialog id="details-dialog"><form method="dialog"><button class="dialog-close" aria-label="Close">×</button><p class="eyebrow">CAREERTRACK</p><h2 id="dialog-title">Add details</h2><p id="dialog-message">This form is a prototype. Next, we'll connect it to your backend and MySQL database.</p><label for="detail-input">Details</label><input id="detail-input" placeholder="Enter details here"><div class="dialog-actions"><button class="button button-outline" value="cancel">Cancel</button><button class="button button-primary" id="dialog-save" value="save">Save for now</button></div></form></dialog>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
